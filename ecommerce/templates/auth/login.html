@@ -20,14 +20,15 @@ SoleStride
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 {%endfor%}
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="/divauth/login/" method="post">
+        {% csrf_token %}
 		<h2>Login</h2>
 		
         <div class="form-group">
         	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="pass1" placeholder="Password" required="required">
         </div>
 		
 		<div class="form-group">
