@@ -119,7 +119,20 @@ STATICFILES_DIRS =[
 MESSAGE_TAGS={
     messages.ERROR:'danger'
 }
+
+
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='divyanshbangwal@gmail.com'
+EMAIL_HOST_PASSWORD='rgir qiyl tkoo bbqs '
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_SSL_CIPHER = 'TLSv1.2'
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
