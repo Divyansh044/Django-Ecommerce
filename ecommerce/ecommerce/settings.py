@@ -123,8 +123,8 @@ MESSAGE_TAGS={
 
 
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_HOST_USER='divyanshbangwal@gmail.com'
-EMAIL_HOST_PASSWORD='rgir qiyl tkoo bbqs '
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_SSL_CIPHER = 'TLSv1.2'
