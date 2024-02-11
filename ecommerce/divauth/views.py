@@ -1,8 +1,10 @@
 from django.shortcuts import render, HttpResponse,redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login as auth_login,logout
+from django.contrib.auth import authenticate,login as auth_login,logout as auth_logout
 from django.contrib import messages
 from django.views.generic import View
+
+
 #email import
 from django.core.mail import send_mail
 from django.conf import settings
@@ -16,6 +18,8 @@ from django.utils.http import urlsafe_base64_decode,urlsafe_base64_encode
 from django.urls import NoReverseMatch,reverse
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str, DjangoUnicodeDecodeError
+
+
 #getting tokens from utlis.py
 from .utils import TokenGenerator,generate_token
 
@@ -26,9 +30,6 @@ from django.core.mail import BadHeaderError,send_mail
 from django.core import mail
 from django.conf import settings
 from django.core.mail import EmailMessage
-
-# Create your views here.
-
 
 #Threading
 import threading
@@ -117,3 +118,13 @@ def login(request):
             return redirect('/divauth/login')
 
     return render(request,'auth/login.html')
+
+def logout(request):
+    auth_logout(request)
+    messages.success(request,"Logout Success")
+    return redirect('/divauth/login')
+
+
+class RequestResetEmailView(View):
+    def get(self,request):
+        return render(request,'auth/request-reset-email.html')
