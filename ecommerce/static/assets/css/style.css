@@ -108,7 +108,8 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 80px;
+  width:90px
 }
 
 /*--------------------------------------------------------------
@@ -407,6 +408,7 @@ h6 {
 
   #hero .animated {
     animation: none;
+
   }
 
   #hero .hero-img {
@@ -442,6 +444,7 @@ h6 {
 @media (max-width: 575px) {
   #hero .hero-img img {
     width: 80%;
+    margin-bottom: 20px;
   }
 }
 
