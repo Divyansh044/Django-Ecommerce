@@ -3,8 +3,9 @@ from home.models import Product
 from math import ceil
 # Create your views here.
 def home(request):
-    current_user=request.user
-    print(current_user)
+    return render(request,'index.html')
+
+def purchase(request):
     allProds=[]
     catprods=Product.objects.values('category','id')
     cats= {item['category'] for item in catprods}
@@ -14,4 +15,4 @@ def home(request):
         nSlides=n//4+ceil((n/4)-(n//4))
         allProds.append([prod,range(1,nSlides),nSlides])
     params={'allProds':allProds}
-    return render(request,'index.html',params)
+    return render(request,'purchase.html',params)
