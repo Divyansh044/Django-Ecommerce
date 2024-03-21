@@ -16,3 +16,18 @@ def purchase(request):
         allProds.append([prod,range(1,nSlides),nSlides])
     params={'allProds':allProds}
     return render(request,'purchase.html',params)
+
+
+def men(request):
+    return render (request,'men.html')
+
+
+def women(request):
+    return render(request,'women.html')
+
+
+def checkout(request):
+    return render(request,'checkout.html')
+
+def cart(request):
+    return render(request,'cart.html')
