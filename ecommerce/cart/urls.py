@@ -18,14 +18,11 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-
-
-admin.site.site_header="SHOEZYFY"
-admin.site.site_title="DIV ADMIN"
+from . import views
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("",include('home.urls')),
-    path("cart/",include('cart.urls')),
-    path('divauth/',include('divauth.urls'))
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+   path("",views.cart_summary,name='cart_summary'),
+   path("cart_update/",views.cart_update,name='cart_update'),
+   path("cart_delete/",views.cart_delete,name='cart_delete'),
+   path("cart_add/",views.cart_add,name='cart_add'),
+] 
 
